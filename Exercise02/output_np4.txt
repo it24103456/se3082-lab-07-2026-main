@@ -1,0 +1,12 @@
+$ mpicc -o sum_scatter sum_scatter.c
+$ mpirun -np 4 ./sum_scatter
+Root filled array with values 1 to 1000000
+  Rank 3: summed 250000 local elements => local_sum = 218750125000
+  Rank 2: summed 250000 local elements => local_sum = 156250125000
+  Rank 1: summed 250000 local elements => local_sum = 93750125000
+  Rank 0: summed 250000 local elements => local_sum = 31250125000
+
+[Scatter] Total sum   = 500000500000
+[Scatter] Expected    = 500000500000
+[Scatter] Correct?    = YES
+[Scatter] Time        = 0.1157 sec

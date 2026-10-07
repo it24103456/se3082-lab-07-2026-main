@@ -1,0 +1,12 @@
+$ mpicc -o sum_allreduce sum_allreduce.c
+$ mpirun -np 4 ./sum_allreduce
+Root filled array with values 1 to 1000000
+  Rank 2: local_sum = 156250125000, total_sum = 500000500000, contribution = 31.25%
+  Rank 0: local_sum = 31250125000, total_sum = 500000500000, contribution = 6.25%
+
+[Allreduce] Total sum   = 500000500000
+[Allreduce] Expected    = 500000500000
+[Allreduce] Correct?    = YES
+[Allreduce] Time        = 0.0467 sec
+  Rank 3: local_sum = 218750125000, total_sum = 500000500000, contribution = 43.75%
+  Rank 1: local_sum = 93750125000, total_sum = 500000500000, contribution = 18.75%

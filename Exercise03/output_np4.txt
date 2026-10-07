@@ -1,0 +1,12 @@
+$ mpicc -o sum_gather sum_gather.c
+$ mpirun -np 4 ./sum_gather
+Root filled array with values 1 to 1000000
+  Rank 1: summed 250000 local elements => local_sum = 93750125000
+  Rank 2: summed 250000 local elements => local_sum = 156250125000
+  Rank 3: summed 250000 local elements => local_sum = 218750125000
+  Rank 0: summed 250000 local elements => local_sum = 31250125000
+
+[Gather] Total sum   = 500000500000
+[Gather] Expected    = 500000500000
+[Gather] Correct?    = YES
+[Gather] Time        = 0.0057 sec

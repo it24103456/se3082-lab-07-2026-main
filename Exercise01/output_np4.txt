@@ -1,0 +1,12 @@
+$ mpicc -o sum_bcast sum_bcast.c
+$ mpirun -np 4 ./sum_bcast
+Root filled array with values 1 to 1000000
+  Rank 0: summed indices [0, 250000) => local_sum = 31250125000
+  Rank 1: summed indices [250000, 500000) => local_sum = 93750125000
+  Rank 3: summed indices [750000, 1000000) => local_sum = 218750125000
+  Rank 2: summed indices [500000, 750000) => local_sum = 156250125000
+
+[Bcast] Total sum   = 500000500000
+[Bcast] Expected    = 500000500000
+[Bcast] Correct?    = YES
+[Bcast] Time        = 0.1111 sec
